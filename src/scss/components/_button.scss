@@ -1,0 +1,46 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/vars" as *;
+
+.button {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	background: #f2f2f2;
+	border-radius: 4px;
+	text-align: center;
+	letter-spacing: 1.25px;
+	text-transform: uppercase;
+	color: $color-base;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	width: 100%;
+	transition: all 0.3s ease-in-out 0s;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	&--green {
+		background-color: $color-green;
+		color: $color-white;
+		font-size: 14px;
+		line-height: 1.7;
+		&:hover {
+			background-color: #2a3229 !important;
+		}
+	}
+}
+
+.button.button--border {
+	background-color: transparent;
+	color: $color-green;
+	font-size: 14px;
+	line-height: 1.7;
+	padding: 6px 12px;
+	box-shadow: 0 0 0 1px inset $color-green;
+	&:hover {
+		color: $color-white;
+		background-color: $color-green;
+	}
+}

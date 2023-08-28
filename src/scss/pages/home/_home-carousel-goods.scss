@@ -1,0 +1,64 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.carousel-goods {
+	background-color: $color-grey-light;
+	padding: 85px 0 70px;
+	margin-bottom: 90px;
+	position: relative;
+	@media (max-width: $screen-xhl) {
+		padding: 60px 0;
+		margin-bottom: 60px;
+		overflow: hidden;
+	}
+	@media (max-width: $screen-sm) {
+		padding: 45px 0 90px;
+		margin-bottom: 80px;
+	}
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -50%;
+		left: 0;
+		width: 290px;
+		height: 408px;
+		background-size: contain;
+		background-image: url("../img/bg-img/home-3.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.3;
+		transform: translateY(-25%);
+		@media (max-width: $screen-xhl) {
+			display: none;
+		}
+	}
+	&__body {
+		position: relative;
+		.nav-arrow {
+			&--prev {
+				left: -64px;
+			}
+			&--next {
+				right: -64px;
+			}
+			@include screen-xhl {
+				display: none;
+			}
+		}
+		.section-title {
+			margin-bottom: 30px;
+			@include screen-xhl {
+				text-align: center;
+			}
+		}
+		.carousel-goods-swiper {
+			@media (max-width: $screen-xhl) {
+				overflow: visible;
+			}
+		}
+		.swiper-pagination-bullets {
+			margin-top: 45px;
+		}
+	}
+}

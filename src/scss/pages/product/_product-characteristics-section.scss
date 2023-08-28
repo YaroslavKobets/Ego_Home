@@ -1,0 +1,150 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.product-characteristics {
+	padding: 90px 0;
+	margin-bottom: 60px;
+	background-color: $color-grey-light;
+	position: relative;
+	.bg-item {
+		position: absolute;
+		z-index: 1;
+		bottom: -406px;
+		left: 0;
+		opacity: 0.3;
+		@media (max-width: $screen-xhl) {
+			display: none;
+		}
+	}
+	@include screen-xhl {
+		padding: 60px 0;
+	}
+	@include screen-sm {
+		padding: 50px 0;
+		margin-bottom: 40px;
+	}
+	&__body {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 370px;
+		gap: 50px 55px;
+		align-items: center;
+		@include screen-xhl {
+			grid-template-columns: auto;
+		}
+		@include screen-sm {
+			row-gap: 0;
+		}
+	}
+
+	&__video {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 56.25%;
+		background-color: $color-pink-light;
+		&:hover {
+			.product-characteristics__video-btn {
+				svg {
+					fill: #c9bab4;
+				}
+			}
+		}
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: none;
+			width: 100%;
+			height: 100%;
+		}
+		&--enabled {
+			cursor: pointer;
+			.product-characteristics__video-btn {
+				display: block;
+			}
+		}
+		&-media {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+		&-btn {
+			padding: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 73px;
+			height: 73px;
+			border: none;
+			background-color: transparent;
+			transform: translate(-50%, -50%);
+			display: none;
+			cursor: pointer;
+			svg {
+				width: 100%;
+				height: 100%;
+				fill: $color-white;
+				transition: all 0.3s ease 0s;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 300;
+		color: $color-green;
+		font-size: 48px;
+		line-height: 1.33;
+		margin-bottom: 10px;
+		@include screen-xhl {
+			margin-bottom: 25px;
+			font-size: 48px;
+			line-height: 1.33;
+		}
+		@include screen-sm {
+			font-size: 32px;
+			line-height: 1.25;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__text {
+		@include screen-xhl {
+			max-width: 370px;
+		}
+		p {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.5;
+			color: $color-base;
+		}
+	}
+
+	&__download-btn {
+		width: auto;
+		margin-top: 50px;
+		padding: 10px 16px 10px 12px !important;
+		@include screen-xhl {
+			margin-top: 25px;
+		}
+		@include screen-sm {
+			margin-top: 35px;
+		}
+		&:hover {
+			svg {
+				fill: $color-white;
+			}
+		}
+		svg {
+			transition: all 0.3s ease 0s;
+			width: 17px;
+			height: 18px;
+			fill: $color-green;
+			margin-left: 14px;
+		}
+	}
+}

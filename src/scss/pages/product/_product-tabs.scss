@@ -1,0 +1,103 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.product-tabs {
+	position: relative;
+	.bg-item {
+		position: absolute;
+		z-index: -1;
+		top: -80px;
+		right: 0;
+		opacity: 0.3;
+		@media (max-width: $screen-xhl) {
+			display: none;
+		}
+	}
+}
+.tabs {
+	&__triggers {
+		border-top: 1px solid #b5b5b5;
+		border-bottom: 1px solid #b5b5b5;
+		padding: 0 40px;
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		@include screen-sm {
+			padding: 0 15px;
+		}
+	}
+	&__triggers-item {
+		padding: 17px 10px 13px;
+		font-family: $font-roboto;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 1.67;
+		color: $color-base;
+		transition: all 0.3s ease 0s;
+		@include screen-sm {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		&:hover {
+			color: $color-green;
+		}
+		&.active {
+			font-weight: 700;
+		}
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+	&__content {
+		padding: 30px 50px 60px;
+		@include screen-xhl {
+			padding: 50px 0 60px;
+		}
+		@include screen-sm {
+			padding: 50px 0;
+		}
+		p {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+		li {
+			font-family: $font-roboto;
+			font-size: 16px;
+			line-height: 1.5;
+			@include screen-sm {
+				font-size: 14px;
+				line-height: 1.7;
+			}
+		}
+		ul {
+			padding-left: 20px;
+			margin: 0 0 20px;
+
+			li {
+				list-style: disc;
+				margin-bottom: 5px;
+			}
+		}
+		ol {
+			padding-left: 20px;
+			margin: 0 0 20px;
+			li {
+				list-style: auto;
+				margin-bottom: 5px;
+			}
+		}
+	}
+	&__content-item {
+		font-family: $font-roboto;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $color-base;
+		transition: all 0.3s ease 0s;
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}

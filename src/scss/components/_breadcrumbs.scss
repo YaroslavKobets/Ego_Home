@@ -1,0 +1,51 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.breadcrumbs {
+	padding: 144px 0 25px;
+	display: flex;
+	align-items: center;
+	@include screen-xhl {
+		padding: 60px 0 40px;
+	}
+	@include screen-sm {
+		padding-bottom: 30px;
+	}
+	li {
+		span {
+			font-family: $font-roboto;
+			font-size: 16px;
+			line-height: 1.5;
+			font-weight: 300;
+			span {
+				color: $color-green;
+				cursor: default;
+			}
+		}
+		a {
+			color: #b5b5b5;
+			position: relative;
+			display: flex;
+			align-items: center;
+			margin-right: 20px;
+			transition: all 0.3s ease 0s;
+			@include screen-xhl {
+				margin-right: 12px;
+			}
+			&:hover {
+				color: $color-green;
+			}
+			&::after {
+				content: "";
+				display: block;
+				width: 24px;
+				height: 24px;
+				background-image: url("../img/breadcrumbs-arrow.svg");
+				background-position: center;
+				background-size: 7px 12px;
+				background-repeat: no-repeat;
+				margin-left: 12px;
+			}
+		}
+	}
+}

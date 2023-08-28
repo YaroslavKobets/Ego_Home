@@ -1,0 +1,54 @@
+<!-- Dealers page -->
+
+@@include('components/parts/app.header.html')
+
+<main class="page-dealers">
+
+	@@include('components/home/home-slider.html')
+
+	@@include('components/template-parts/information.html')
+
+	<section class="product-characteristics">
+		<div class="container">
+			<div class="product-characteristics__body">
+				<div class="product-characteristics__video product-characteristics__video--enabled" data-aos="zoom-out">
+					<a class="product-characteristics__video-link" href="https://youtu.be/Z--HFdFR7ps">
+						<img class="product-characteristics__video-media" src="https://i.ytimg.com/vi/Z--HFdFR7ps/maxresdefault.jpg"
+							alt="">
+					</a>
+					<button type="button" class="product-characteristics__video-btn">
+						<svg>
+							<use xlink:href="#ego-svg-play">
+						</svg>
+					</button>
+				</div>
+
+				<div class="product-characteristics__content" data-aos="fade-up">
+					<div class="home-contact-form__body">
+						<h2 class="section-title">Ми відкриті для співпраці</h2>
+						<form action="#" class="contact-form">
+							<div class="contact-form__item">
+								<input class="required" type="text" name="name" id="" placeholder="Имя*">
+							</div>
+							<div class="contact-form__item">
+								<input class="required" type="tel" name="phone" id="" placeholder="Номер телефона*">
+							</div>
+							<div class="contact-form__item">
+								<input class="required" type="tel" name="phone" id="" placeholder="E-mail*">
+							</div>
+							<div class="contact-form__item">
+								<input type="tel" name="phone" id="" placeholder="Сообщение">
+							</div>
+							<div class="contact-form__item">
+								<button type="submit" class="button button--green">Оставить заявку</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+@@include('components/parts/app.footer.html')

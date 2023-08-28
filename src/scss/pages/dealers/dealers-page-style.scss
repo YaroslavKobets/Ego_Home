@@ -1,0 +1,36 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.page-dealers {
+	.home-contact-form__body .section-title {
+		font-size: 32px;
+		@include screen-sm {
+			margin-top: 35px;
+		}
+	}
+	.product-characteristics {
+		padding-bottom: 0;
+		.button {
+			max-width: 204px;
+			margin: 0 auto;
+			display: flex;
+		}
+	}
+	.product-characteristics__body {
+		align-items: flex-start;
+	}
+	.contact-form {
+		grid-template-columns: auto;
+		justify-content: stretch;
+		margin-top: 30px;
+		row-gap: 32px;
+		@include screen-sm {
+			row-gap: 52px;
+		}
+	}
+}
+
+.page-guarantees .section-title,
+.page-dealers .section-title {
+	font-size: 56px !important;
+}

@@ -1,0 +1,24 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/vars" as *;
+
+.container {
+	width: 1200px;
+	max-width: 100%;
+	padding: 0 15px;
+	margin-left: auto;
+	margin-right: auto;
+	&--big {
+		width: 1370px;
+	}
+	@include screen-xhl {
+		width: 768px;
+		padding: 0 24px;
+		&--big {
+			width: 768px;
+		}
+	}
+
+	@include screen-sm {
+		padding: 0 15px;
+	}
+}

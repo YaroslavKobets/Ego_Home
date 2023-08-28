@@ -1,0 +1,113 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/vars" as *;
+
+.information {
+	padding: 100px 0;
+	position: relative;
+	@include screen-xhl {
+		padding: 80px 0;
+	}
+	@include screen-sm {
+		padding: 40px 0 50px;
+	}
+	.bg-item {
+		position: absolute;
+		z-index: 1;
+		opacity: 0.3;
+
+		@media (max-width: $screen-xhl) {
+			display: none;
+		}
+		&:nth-child(1) {
+			top: -65px;
+			left: 0;
+		}
+		&:nth-child(2) {
+			bottom: -200px;
+			right: 0;
+		}
+	}
+	&__row {
+		&--with-image {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 30px;
+			align-items: center;
+			@media (max-width: $screen-xhl) {
+				margin-bottom: 60px;
+				grid-template-columns: 1fr;
+			}
+			@media (max-width: $screen-sm) {
+				margin-bottom: 50px;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 60px;
+			@include screen-xhl {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__content {
+		@media (max-width: $screen-xhl) {
+			margin-bottom: 25px;
+		}
+		.section-title {
+			margin-bottom: 24px;
+		}
+		p {
+			font-family: $font-roboto;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.5;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+			@media (max-width: $screen-sm) {
+				font-size: 14px;
+				line-height: 1.7;
+			}
+		}
+		li {
+			font-family: $font-roboto;
+			font-size: 16px;
+			line-height: 1.5;
+			@include screen-sm {
+				font-size: 14px;
+				line-height: 1.7;
+			}
+		}
+		ul {
+			padding-left: 20px;
+			margin: 0 0 20px;
+
+			li {
+				list-style: disc;
+				margin-bottom: 5px;
+			}
+		}
+		ol {
+			padding-left: 20px;
+			margin: 0 0 20px;
+			li {
+				list-style: auto;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&__image {
+		max-width: 600px;
+		@media (max-width: $screen-xhl) {
+			margin: 0 auto;
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+}

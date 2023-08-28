@@ -1,0 +1,22 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.page-product {
+	.carousel-goods {
+		padding: 0;
+		margin-bottom: 60px;
+		background-color: transparent;
+		&::before {
+			display: none;
+		}
+		&__body {
+			.section-title {
+				text-align: center;
+				margin-bottom: 60px;
+			}
+		}
+	}
+	.home-contact-form {
+		padding: 0 0 95px;
+	}
+}

@@ -1,0 +1,84 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/vars" as *;
+
+.accordion {
+	display: none;
+	@media (max-width: $screen-sm) {
+		display: block;
+	}
+	&__list {
+		& > li {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__item {
+		&.open {
+			.accordion__content {
+				opacity: 1;
+			}
+			.accordion__control {
+				margin-bottom: 12px;
+			}
+			.accordion__icon {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+
+	&__control {
+		display: inline-flex;
+		align-items: center;
+		border: none;
+		padding: 0;
+		background-color: transparent;
+		transition: all 0.3s ease;
+		margin-right: -42px;
+	}
+
+	&__icon {
+		position: relative;
+		width: 24px;
+		height: 24px;
+		display: block;
+		margin-left: 18px;
+		transition: all 0.3s ease 0s;
+		&::before,
+		&::after {
+			content: "";
+			width: 8px;
+			height: 2px;
+			border-radius: 3px;
+			background-color: $color-pink-light;
+			position: absolute;
+			top: 50%;
+			transition: all 0.3s ease;
+		}
+		&::before {
+			left: 20%;
+			transform: rotate(45deg) translateY(-50%);
+		}
+		&::after {
+			right: 20%;
+			transform: rotate(-45deg) translateY(-50%);
+		}
+	}
+
+	&__content {
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		padding: 0;
+		will-change: max-height;
+		transition: all 0.3s ease;
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-bottom: 14px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.page-category {
+	position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -440px;
+		right: -30px;
+		width: 471px;
+		height: 780px;
+		background-size: contain;
+		background-image: url("../img/bg-img/home-2.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.3;
+		z-index: -1;
+		@media (max-width: $screen-xhl) {
+			display: none;
+		}
+	}
+	.section-title {
+		margin: 75px 0 45px;
+		text-align: center;
+		@include screen-xhl {
+			margin: 60px 0 20px;
+		}
+	}
+	.home-categories {
+		padding: 0;
+		margin-bottom: 200px;
+		@include screen-xhl {
+			margin-bottom: 80px;
+		}
+		.bg-item {
+			top: -250px;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@use "./helpers/mixins" as *;
+@use "./helpers/vars" as *;
+
+.page-about {
+	.slide-content__title {
+		font-size: 56px;
+	}
+	.information {
+		@include screen-xhl {
+			padding: 100px 0 80px !important;
+		}
+		.bg-item {
+			display: none;
+		}
+		&__row {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+	.information__content .section-title {
+		font-size: 56px;
+	}
+}

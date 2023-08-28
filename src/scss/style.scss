@@ -1,0 +1,15 @@
+@import "fonts/index";
+@import "helpers/index";
+@import "components/index";
+
+// template parts
+@import "template-parts/header";
+@import "template-parts/mobile-menu";
+@import "template-parts/footer";
+@import "template-parts/popup";
+
+// modules
+@import "modules/swiper";
+
+// pages
+@import "pages/index";

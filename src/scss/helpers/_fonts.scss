@@ -1,0 +1,67 @@
+@use "./mixins" as *;
+@use "./vars" as *;
+
+
+@mixin h1 {
+    @include font(112px, 1.15, 700, 0.03em);
+
+    @include screen-xxl {
+        @include font(80px);
+    }
+
+    @include screen-sm {
+        @include font(52px);
+    }
+}
+
+
+@mixin h2 {
+    @include font(80px, 88px, 700, -0.03em);
+
+    @include screen-xxl {
+        @include font(64px, 72px, 700, -0.03em);
+    }
+
+    @include screen-sm {
+        @include font(40px, 44px, 700, -0.03em);
+    }
+}
+
+
+@mixin h3 {
+    @include font(48px, 56px, 700, -0.02em);
+
+    @include screen-xxl {
+        @include font(32px, 40px, 700, -0.02em);
+    }
+}
+
+
+@mixin h4 {
+    @include font(32px, 40px, 700);
+
+    @include screen-xxl {
+        @include font(18px, 22px, 700);
+    }
+
+    @include screen-sm {
+        @include font(24px, 28px, 700);
+    }
+}
+
+
+.h1 {
+    @include h1;
+}
+
+.h2 {
+    @include h2;
+}
+
+.h3 {
+    @include h3;
+}
+
+.h4 {
+    @include h4;
+}

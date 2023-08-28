@@ -1,0 +1,13 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/vars" as *;
+
+.section-title {
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 1.4;
+	color: $color-green;
+	@media (max-width: $screen-sm) {
+		font-size: 32px;
+		line-height: 1.25;
+	}
+}
